@@ -1,0 +1,86 @@
+Day 1 : Getting Started with Nodejs 
+Read, Eval, Print, Loop
+TAB & Underscore 
+Executing Scripts
+Working with Timers
+Node’s CLI
+Node process Object
+
+Exercise : 1 
+Print the following: -
+ “Hello after 4 seconds”
+ “Hello after 8 seconds” 
+Constraints - Define only ONE function
+Ans : 
+const theOneFunc = delay => {
+  console.log('Hello after ' + delay + ' seconds');
+};
+
+setTimeout(theOneFunc, 4 * 1000, 4);
+setTimeout(theOneFunc, 4 * 1000, 4);
+
+
+
+Exercise : 2
+Print "Hello World"
+Every second and stop after 5 times
+After 5 times. Print "Done" and let Node exit.
+Ans : 
+let counter = 0;
+const intervalId = setInterval(() => {
+  console.log('Hello World');
+  counter += 1;
+if (counter === 5) {
+    console.log('Done');
+    clearInterval(intervalId);
+  }
+}, 1000);
+
+
+Day 2 : Modern Javascript
+ECMA Script
+Variable & Block scopes
+Arrow & Function
+Object Literals
+Destructuring  & RestSpread
+Template Strings
+Classes
+Promises & AsyncAwait  
+
+Exercise 1:
+ Explain why we needed promises & AsyncAwait kind of function in NodeJS
+
+Ans :
+
+Async/Await is used to work with promises with asynchronous functions.
+
+Putting Async in front of the function expects it to return the promise. This means all async function have a callback
+Await can be used for single promises to get resolved or rejected and return the data or error
+Async/Await behaves like synchronous code execution
+There can be multiple awaits in a single async function
+We will be using try/catch construct, which makes async/await easy to handle synchronous and asynchronous code
+
+Exercise 2:
+var words = [ 'Laptop','bus' , 'Parking', 13 ,'453'];
+Calculate and show length of each word of above array .
+Constraint :  You can use console.log() only once in your code.
+
+Expected op :  >> Array [6, 3, 7, undefined, 3]
+
+Ans :
+
+> var words = [ 'Laptop','bus' , 'Parking', 13 ,'453'];
+
+> var lengths = words.map(function(word) {
+...   return word + ' = ' + word.length;
+... });
+
+> console.log(lengths);
+[ 'Laptop = 6', 'bus = 3', 'Parking = 7', '13 = undefined', '453 = 3' ]
+
+Ans2:
+
+var words = [ 'Laptop','bus' , 'Parking', 13 ,'453'];
+words.map(w => w.length);
+
+[ 6, 3, 7, undefined, 3 ]
